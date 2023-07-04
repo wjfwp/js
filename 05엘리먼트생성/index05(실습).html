@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>삭제 버튼은 만들당시에 이벤트를 걸면 됩니다.</h3>
+    <h3>input은 지우는게 아니라 display를 제어하세요.</h3>
+    <h3 id="h3">할일 목록 만들기</h3>
+
+    <input type="text" class="user" placeholder="이름을 입력하세요">
+    <button class="btn">확인</button>
+    <br>
+
+    <input type="text" class="todo" placeholder="당신의 할일을 적으세요">
+    <button class="btn2">확인</button>
+
+    <ul class="list">
+
+    </ul>
+
+
+    <script>
+        var user = document.querySelector('.user');
+        var btn = document.querySelector('.btn');
+        var h3 = document.getElementById('h3');
+
+        var todo = document.querySelector(".todo");
+        var btn2 = document.querySelector(".btn2");
+
+        var list = document.querySelector(".list");
+
+
+        btn.onclick = function() {
+            var h4 = document.createElement('h4');
+            console.log(user.value);
+            h4.innerHTML = user.value + " 님 환영합니다.";
+            h3.appendChild(h4);
+            user.style.display = 'none';
+            btn.style.display = 'none';
+            
+        };
+
+        btn2.onclick = function() {
+            var li = document.createElement('li');
+            var btn3 = document.createElement('button');
+            li.innerHTML = todo.value;
+            btn3.innerHTML = 'X';
+            li.appendChild(btn3);
+            list.appendChild(li);
+            
+            btn3.onclick = function() {
+                li.remove();
+            }
+
+            todo.value = '';
+        };
+    </script>
+</body>
+</html>
