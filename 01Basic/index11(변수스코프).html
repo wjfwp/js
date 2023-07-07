@@ -15,19 +15,23 @@
         }
         console.log(num); //if문 안에서 선언한 변수도, 전역변수 취급
 
+
         var a = 10;
         function func1() {
             var a = 50; //함수 안에서만 쓸 수 있는 지역변수
         }
-
+        
         func1();
         console.log(a); //var변수는 함수안에서 만드는 변수가 지역변수
 
-        for(var i = 1; i <= 10; i++) {
 
+        for(var i = 1; i <= 10; i++) {
         }
 
         console.log(i); //11
+
+
+
 
         console.log('-----------------------------------------------')
 
